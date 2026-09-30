@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Faizumar Grup | Company Profile</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial, sans-serif;
+    color:#17352a;
+    background:#fff;
+    line-height:1.6;
+}
+
+nav{
+    position:fixed;
+    top:0;
+    width:100%;
+    z-index:1000;
+    background:rgba(255,255,255,.95);
+    box-shadow:0 3px 15px rgba(0,0,0,.1);
+}
+
+.navbar{
+    max-width:1150px;
+    margin:auto;
+    height:70px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 20px;
+}
+
+.logo{
+    font-size:24px;
+    font-weight:bold;
+    color:#087443;
+}
+
+.logo span{
+    color:#d39b28;
+}
+
+.menu{
+    display:flex;
+    gap:25px;
+}
+
+.menu a{
+    text-decoration:none;
+    color:#17352a;
+    font-weight:bold;
+}
+
+.menu a:hover{
+    color:#087443;
+}
+
+.menu-btn{
+    display:none;
+    font-size:25px;
+    border:none;
+    background:none;
+}
+
+/* HERO */
+.hero{
+    min-height:100vh;
+    padding:120px 8% 70px;
+    display:flex;
+    align-items:center;
+    color:white;
+    background:
+    linear-gradient(rgba(5,55,35,.75),rgba(5,55,35,.75)),
+    url("https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1800&q=85")
+    center/cover;
+}
+
+.hero-content{
+    max-width:750px;
+}
+
+.hero h1{
+    font-size:clamp(40px,7vw,75px);
+    line-height:1.05;
+    margin-bottom:25px;
+}
+
+.hero h1 span{
+    color:#e4b94d;
+}
+
+.hero p{
+    font-size:19px;
+    margin-bottom:30px;
+}
+
+.btn{
+    display:inline-block;
+    padding:14px 25px;
+    border-radius:8px;
+    text-decoration:none;
+    font-weight:bold;
+    margin-right:10px;
+}
+
+.btn-primary{
+    background:#e1b342;
+    color:#17271e;
+}
+
+.btn-outline{
+    border:2px solid white;
+    color:white;
+}
+
+.btn:hover{
+    transform:translateY(-3px);
+}
+
+/* GENERAL */
+section{
+    padding:90px 8%;
+}
+
+.title{
+    text-align:center;
+    max-width:700px;
+    margin:0 auto 50px;
+}
+
+.title small{
+    color:#07804b;
+    font-weight:bold;
+    text-transform:uppercase;
+}
+
+.title h2{
+    font-size:38px;
+    margin:8px 0;
+}
+
+.title p{
+    color:#68766f;
+}
+
+/* ABOUT */
+.about{
+    max-width:1150px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:50px;
+    align-items:center;
+}
+
+.about img{
+    width:100%;
+    height:430px;
+    object-fit:cover;
+    border-radius:20px;
+    box-shadow:0 12px 30px rgba(0,0,0,.15);
+}
+
+.about h3{
+    font-size:30px;
+    margin-bottom:15px;
+}
+
+.about p{
+    color:#68766f;
+    margin-bottom:15px;
+}
+
+.checks{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px;
+    margin-top:20px;
+}
+
+.check{
+    background:#f0f7f3;
+    padding:13px;
+    border-radius:8px;
+    font-weight:bold;
+}
+
+/* STATS */
+.stats{
+    max-width:1150px;
+    margin:50px auto 0;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+}
+
+.stat{
+    text-align:center;
+    padding:25px;
+    border-radius:15px;
+    background:white;
+    box-shadow:0 8px 25px rgba(0,0,0,.1);
+}
+
+.stat strong{
+    display:block;
+    font-size:35px;
+    color:#087443;
+}
+
+.stat span{
+    color:#68766f;
+}
+
+/* SERVICES */
+.services{
+    background:#f3f8f5;
+}
+
+.cards{
+    max-width:1150px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.card{
+    background:white;
+    border-radius:16px;
+    overflow:hidden;
+    box-shadow:0 8px 25px rgba(0,0,0,.1);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+}
+
+.card img{
+    width:100%;
+    height:210px;
+    object-fit:cover;
+}
+
+.card-content{
+    padding:22px;
+}
+
+.card h3{
+    margin-bottom:8px;
+}
+
+.card p{
+    color:#68766f;
+}
+
+/* PROJECT */
+.projects{
+    max-width:1150px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.project{
+    height:300px;
+    position:relative;
+    overflow:hidden;
+    border-radius:16px;
+}
+
+.project img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:.4s;
+}
+
+.project:hover img{
+    transform:scale(1.08);
+}
+
+.project-info{
+    position:absolute;
+    bottom:0;
+    width:100%;
+    padding:60px 20px 20px;
+    color:white;
+    background:linear-gradient(transparent,rgba(0,0,0,.85));
+}
+
+/* GALLERY */
+.gallery{
+    background:#f3f8f5;
+}
+
+.gallery-grid{
+    max-width:1150px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+}
+
+.gallery-item{
+    height:220px;
+    overflow:hidden;
+    border-radius:12px;
+    cursor:pointer;
+}
+
+.gallery-item img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:.4s;
+}
+
+.gallery-item:hover img{
+    transform:scale(1.08);
+}
+
+/* CONTACT */
+.contact{
+    color:white;
+    background:linear-gradient(120deg,#064b31,#0b8051);
+}
+
+.contact-grid{
+    max-width:1150px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:50px;
+}
+
+.contact h2{
+    font-size:40px;
+    margin-bottom:15px;
+}
+
+.contact p{
+    color:#d8eee3;
+}
+
+.contact-box{
+    margin-top:15px;
+    padding:18px;
+    background:rgba(255,255,255,.12);
+    border-radius:10px;
+}
+
+form{
+    background:white;
+    color:#17352a;
+    padding:25px;
+    border-radius:15px;
+}
+
+form h3{
+    margin-bottom:15px;
+}
+
+input,textarea{
+    width:100%;
+    padding:14px;
+    margin-bottom:12px;
+    border:1px solid #ddd;
+    border-radius:8px;
+    font-family:Arial;
+}
+
+textarea{
+    height:130px;
+}
+
+form button{
+    border:none;
+    cursor:pointer;
+}
+
+/* FOOTER */
+footer{
+    background:#061b12;
+    color:#ccd8d3;
+    text-align:center;
+    padding:25px;
+}
+
+/* MODAL */
+.modal{
+    display:none;
+    position:fixed;
+    z-index:2000;
+    inset:0;
+    background:rgba(0,0,0,.9);
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+}
+
+.modal img{
+    max-width:90%;
+    max-height:85%;
+    border-radius:10px;
+}
+
+.close{
+    position:absolute;
+    right:30px;
+    top:15px;
+    color:white;
+    font-size:40px;
+    cursor:pointer;
+}
+
+/* MOBILE */
+@media(max-width:800px){
+
+    .menu{
+        display:none;
+        position:absolute;
+        top:70px;
+        left:0;
+        width:100%;
+        background:white;
+        flex-direction:column;
+        padding:20px;
+        text-align:center;
+    }
+
+    .menu.active{
+        display:flex;
+    }
+
+    .menu-btn{
+        display:block;
+    }
+
+    .about,
+    .contact-grid{
+        grid-template-columns:1fr;
+    }
+
+    .cards,
+    .projects{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .gallery-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .stats{
+        grid-template-columns:1fr 1fr;
+    }
+}
+
+@media(max-width:550px){
+
+    .cards,
+    .projects,
+    .gallery-grid{
+        grid-template-columns:1fr;
+    }
+
+    .hero h1{
+        font-size:45px;
+    }
+
+    .stats{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .checks{
+        grid-template-columns:1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav>
+<div class="navbar">
+
+<div class="logo">
+Faizumar<span>Grup</span>
+</div>
+
+<button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+<div class="menu" id="menu">
+<a href="#home">Beranda</a>
+<a href="#tentang">Tentang</a>
+<a href="#layanan">Layanan</a>
+<a href="#proyek">Proyek</a>
+<a href="#galeri">Galeri</a>
+<a href="#kontak">Kontak</a>
+</div>
+
+</div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+
+<div class="hero-content">
+
+<p>COMPANY PROFILE • FAIZUMAR GRUP</p>
+
+<h1>
+Membangun
+<span>Kepercayaan</span>,
+Menghadirkan Nilai.
+</h1>
+
+<p>
+Faizumar Grup hadir sebagai perusahaan yang
+mengutamakan kualitas, profesionalisme,
+inovasi, dan hubungan jangka panjang
+dengan pelanggan serta mitra.
+</p>
+
+<a href="#tentang" class="btn btn-primary">
+Kenal Kami
+</a>
+
+<a href="#kontak" class="btn btn-outline">
+Hubungi Kami
+</a>
+
+</div>
+</section>
+
+<!-- TENTANG -->
+<section id="tentang">
+
+<div class="title">
+<small>Tentang Kami</small>
+<h2>Profil Faizumar Grup</h2>
+<p>
+Membangun bisnis dengan kualitas,
+integritas dan inovasi.
+</p>
+</div>
+
+<div class="about">
+
+<img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1200&q=85">
+
+<div>
+
+<h3>Partner yang tumbuh bersama</h3>
+
+<p>
+Faizumar Grup merupakan perusahaan yang
+mengutamakan pelayanan profesional dan
+kepuasan pelanggan.
+</p>
+
+<p>
+Dengan semangat inovasi dan kerja sama,
+kami terus membangun fondasi bisnis yang
+kuat untuk menghadapi tantangan masa depan.
+</p>
+
+<div class="checks">
+
+<div class="check">✓ Kualitas Terjamin</div>
+<div class="check">✓ Pelayanan Profesional</div>
+<div class="check">✓ Inovasi Berkelanjutan</div>
+<div class="check">✓ Mitra Tepercaya</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="stats">
+
+<div class="stat">
+<strong>10+</strong>
+<span>Proyek</span>
+</div>
+
+<div class="stat">
+<strong>5+</strong>
+<span>Tahun Pengalaman</span>
+</div>
+
+<div class="stat">
+<strong>100%</strong>
+<span>Komitmen</span>
+</div>
+
+<div class="stat">
+<strong>24/7</strong>
+<span>Informasi</span>
+</div>
+
+</div>
+
+</section>
+
+<!-- LAYANAN -->
+<section class="services" id="layanan">
+
+<div class="title">
+<small>Layanan</small>
+<h2>Apa yang Kami Tawarkan</h2>
+<p>
+Layanan profesional untuk mendukung
+perkembangan usaha.
+</p>
+</div>
+
+<div class="cards">
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1000&q=85">
+
+<div class="card-content">
+<h3>Konsultasi Bisnis</h3>
+<p>
+Perencanaan dan pengembangan strategi
+untuk mendukung pertumbuhan usaha.
+</p>
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1000&q=85">
+
+<div class="card-content">
+<h3>Operasional & Manajemen</h3>
+<p>
+Mendukung proses kerja yang terstruktur,
+efisien dan berorientasi hasil.
+</p>
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=1000&q=85">
+
+<div class="card-content">
+<h3>Inovasi & Teknologi</h3>
+<p>
+Pemanfaatan teknologi untuk menciptakan
+proses bisnis yang modern.
+</p>
+</div>
+
+</div>
+
+</div>
+</section>
+
+<!-- PROYEK -->
+<section id="proyek">
+
+<div class="title">
+<small>Portofolio</small>
+<h2>Proyek & Aktivitas</h2>
+<p>
+Beberapa contoh aktivitas Faizumar Grup.
+</p>
+</div>
+
+<div class="projects">
+
+<div class="project">
+
+<img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1000&q=85">
+
+<div class="project-info">
+<h3>Project Development</h3>
+<p>Pengembangan usaha dan fasilitas.</p>
+</div>
+
+</div>
+
+<div class="project">
+
+<img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1000&q=85">
+
+<div class="project-info">
+<h3>Business Partnership</h3>
+<p>Kolaborasi dan kerja sama strategis.</p>
+</div>
+
+</div>
+
+<div class="project">
+
+<img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1000&q=85">
+
+<div class="project-info">
+<h3>Business Planning</h3>
+<p>Perencanaan pertumbuhan berkelanjutan.</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- GALERI -->
+<section class="gallery" id="galeri">
+
+<div class="title">
+<small>Galeri</small>
+<h2>Dokumentasi Faizumar Grup</h2>
+<p>Klik gambar untuk memperbesar.</p>
+</div>
+
+<div class="gallery-grid">
+
+<div class="gallery-item" onclick="openImage(this)">
+<img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=900&q=85">
+</div>
+
+<div class="gallery-item" onclick="openImage(this)">
+<img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=900&q=85">
+</div>
+
+<div class="gallery-item" onclick="openImage(this)">
+<img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=900&q=85">
+</div>
+
+<div class="gallery-item" onclick="openImage(this)">
+<img src="https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&w=900&q=85">
+</div>
+
+</div>
+</section>
+
+<!-- KONTAK -->
+<section class="contact" id="kontak">
+
+<div class="contact-grid">
+
+<div>
+
+<h2>Siap Berkolaborasi?</h2>
+
+<p>
+Hubungi Faizumar Grup untuk mendapatkan
+informasi lebih lanjut mengenai perusahaan
+dan layanan kami.
+</p>
+
+<div class="contact-box">
+📍 <b>Alamat</b><br>
+Indonesia
+</div>
+
+<div class="contact-box">
+📞 <b>Telepon</b><br>
++62 812-0000-0000
+</div>
+
+<div class="contact-box">
+✉️ <b>Email</b><br>
+info@faizumargrup.com
+</div>
+
+</div>
+
+<form onsubmit="kirimPesan(event)">
+
+<h3>Kirim Pesan</h3>
+
+<input
+type="text"
+id="nama"
+placeholder="Nama lengkap"
+required
+>
+
+<input
+type="email"
+id="email"
+placeholder="Email"
+required
+>
+
+<textarea
+id="pesan"
+placeholder="Tulis pesan Anda..."
+required
+></textarea>
+
+<button class="btn btn-primary">
+Kirim Pesan
+</button>
+
+</form>
+
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+
+© 2026
+<b>Faizumar Grup</b>.
+Company Profile.
+All Rights Reserved.
+
+</footer>
+
+<!-- MODAL GAMBAR -->
+<div class="modal" id="modal" onclick="closeImage()">
+
+<span class="close">×</span>
+
+<img id="modalImage">
+
+</div>
+
+<script>
+
+function toggleMenu(){
+
+document.getElementById("menu")
+.classList.toggle("active");
+
+}
+
+function openImage(element){
+
+let image =
+element.querySelector("img").src;
+
+document.getElementById("modalImage").src =
+image;
+
+document.getElementById("modal")
+.style.display="flex";
+
+}
+
+function closeImage(){
+
+document.getElementById("modal")
+.style.display="none";
+
+}
+
+function kirimPesan(event){
+
+event.preventDefault();
+
+let nama =
+document.getElementById("nama").value;
+
+let pesan =
+document.getElementById("pesan").value;
+
+let body =
+"Nama: "+nama+
+"%0A%0A"+
+pesan;
+
+window.location.href =
+"mailto:info@faizumargrup.com"+
+"?subject=Pesan dari Website Faizumar Grup"+
+"&body="+body;
+
+}
+
+</script>
+
+</body>
+</html>
